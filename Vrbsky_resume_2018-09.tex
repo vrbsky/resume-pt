@@ -23,6 +23,7 @@
 
 %special characters, e.g. external link icons
 \usepackage{fontawesome}    %\faExternalLink, \faHandORight, \faGlobe
+%fontawesome5 should have \faKaggle{}, but package not available on overleaf
 \usepackage{marvosym}       %\Telefon, \Letter, \Mundus, \ComputerMouse
 \usepackage{pifont}         %\ding{43}   
 
@@ -102,13 +103,13 @@
   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \textbf{#1} $\vert$ \textit{\small#3} & #2 \\
-    \end{tabular*}\vspace{-15pt}
+    \end{tabular*}\vspace{-16pt}
 }
 \newcommand{\resumeSubheadingEduFive}[5]{
   \vspace{-1pt}\item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textbf{#1} $\vert$ CR: #5 & #2 \\
-      \textit{\small#3} & {\small #4} \\
+      \textbf{#1} $\vert$ \textit{\small#3} & #2 \\
+      CR: #5 & {\small #4} \\
     \end{tabular*}\vspace{-12pt}
 }
 \newcommand{\resumeSubheadingFour}[4]{
@@ -179,7 +180,9 @@
 \usepackage{scalerel}
 \newcommand{\csharpp}{C\scalerel*{\#}{X}}
 \newcommand{\csharp}{C\#}
+\newcommand{\cplusplus}{C\texttt{++}}
 
+\newcommand{\myFaKaggle}{{\fontfamily{lmss}\selectfont \textbf{k}}}%fonts: pag, phv, lmss, qag, qhv
 
 \newcommand{\version}{Versão do documento: \ifcase \month \or Jan\or Fev\or Mar\or %
 Abr\or Mai\or Jun\or Jul\or Ago\or Set\or Out\or Nov\or %
@@ -215,6 +218,8 @@ Foca em melhores práticas para AI/ML/Dados e desenvolvimento da equipe e da emp
 \myHref{https://vrbsky.github.io/}{vrbsky.github.io}}
 \newcommand{\github}{%
 \myHref{https://github.com/vrbsky}{github.com/vrbsky}}
+\newcommand{\kaggle}{%
+\myHref{https://www.kaggle.com/vrbsky}{kaggle.com/vrbsky}}
 \newcommand{\vrbskycom}{%
 \myHref{https://www.vrbsky.com}{www.vrbsky.com}}
 \newcommand{\addressBR}{%
@@ -228,7 +233,7 @@ Foca em melhores práticas para AI/ML/Dados e desenvolvimento da equipe e da emp
 
 \vspace{-10pt}
 
-\fancyfoot[C]{\vspace{-2pt}\scriptsize{\version{} \textbar{} Mais informações e a versão em inglés no \myHref{https://www.vrbsky.com}{vrbsky.com}}}%use footnotesize or scriptsize
+\fancyfoot[C]{\vspace{-2pt}\scriptsize{\version{} \textbar{} Mais informações \& English version: \myHref{https://www.vrbsky.com}{vrbsky.com}}}%use footnotesize or scriptsize
 %\rfoot{\textcolor{mygray}{ver. March 2018}}
 
 %----------HEADING-----------------
@@ -245,6 +250,7 @@ Foca em melhores práticas para AI/ML/Dados e desenvolvimento da equipe e da emp
         \faPhone{} \faWhatsapp{} \phoneBR{} \\
         \faEnvelope{} \email{} \\
         \faLinkedin{} \linkedin{} \\
+        %\myFaKaggle{} \kaggle{} \\
         \faGithub{} \github{} \\
         \faGlobe{} \vrbskycom{} \\
         \faMapMarker{} \addressBR{} \\
@@ -292,7 +298,7 @@ Foca em melhores práticas para AI/ML/Dados e desenvolvimento da equipe e da emp
     \resumeJobSubheadingC
       {\myHref{http://www.vibedesenv.com/}{Vibe}}{Tecnologia para negócios}%{Bel\'em, PA, Brazil}
       {Analista de Sistemas - Web}{Out 2017 -- Jan 2019}
-      {Java, C\#, SQL, CI/CD, REST, JSF, JSP, AngularJS, JS, ASP.NET, SVN}
+      {Java, \csharp, SQL, REST, JS, ASP.NET, SVN}%CI/CD, JSF, JSP, AngularJS,
       \projectDescriptionC{Aplicativos web de Internet Banking, sistemas de gerenciamento, serviços web para o banco \myHref{http://www.banpara.b.br/}{Banpará}}
       \resumeItemListStart
           %{Internet Banking applications and other internal systems for a Brazilian state bank \myHref{http://www.banpara.b.br/}{Banpará}\\
@@ -346,11 +352,11 @@ em rel. ao atraso (%
       \resumeItemListEnd
 
     \resumeJobSubheadingC
-      {\myHref{https://www.agentfly.com}{AgentFly Technologies}}{Startup comercial/universitário em
-      \myHref{http://agents.felk.cvut.cz/projects/agentfly}{Agent Technology Center}}%{Prague, Czech Republic}
+      {\myHref{https://www.agentfly.com}{AgentFly Technologies}}{Startup que nasceu no
+      \myHref{http://aic.fel.cvut.cz/}{AI Center}}%{Prague, Czech Republic}
       {Analista de Sistemas Júnior}{Abr 2013 -- Ago 2014}
-      {Java, XML, CVS}
-      \projectDescriptionC{Projeto multi-agente de grande escala que modela e simula controle de tráfego aéreo}
+      {Java, CVS}
+      \projectDescriptionC{Simulação de gerenciamento de tráfego aéreo para análises hipotéticas e conceitos futuros}
       \resumeItemListStart
         \resumeItemCustom{Implementação protocolo de prevenção de colisões para VANTs (drones)}
         \resumeItemCustom{Otimização da heurística de geração das rotas por meio de extrapolação da métrica baseada em colisões}
@@ -378,24 +384,24 @@ em rel. ao atraso (%
 %--------COMPUTER SCIENCE SKILLS------------
 \section{Competências}
   \resumeSubHeadingListStart
-    \resumeSubItem{Linguagens}{Python 2 anos, SQL 2 anos; Java 4 anos; C\# e C/C\texttt{++} 1 ano; Matlab 3 anos $\vert$ \textbf{Eng}, \textbf{Por}, \textbf{Cze}, Ger}
+    \resumeSubItem{Linguagens}{Python 3 anos, SQL 2 anos, Java 4 anos, \csharp{} e C/\cplusplus{} 1 ano, Matlab 3 anos $\vert$ \textbf{Eng}, \textbf{Por}, \textbf{Cze}, Ger}
       %\hfill
       %\textbf{}{}
-    \resumeSubItem{Competências}{Aprendizado (Não-)Supervisionado, Probabilidade, Estatística, Hadoop, Public Speaking} %AWS, Play, React, Kafka, GCE
-    \resumeSubItem{Interesses}{Spark, Kafka, TensorFlow 2, PyTorch, Cloud, Aprendizado Reforcado, Arquiteturas de RN $\vert$ Liderança}
+    \resumeSubItem{Competências}{Aprendizado (Não-)Supervisionado, Estatística, Public Speaking, BI Dashboards} %AWS, Play, React, Kafka, GCE, Hadoop
+    \resumeSubItem{Interesses}{Spark, Kafka, TensorFlow 2, PyTorch, Cloud, Aprendizado por Reforço, Redes Neurais $\vert$ Liderança}
     
   \resumeSubHeadingListEnd
 
 %-----------EDUCATION-----------------
 \section{Educação}
   \resumeSubHeadingListStart
-    \resumeSubheadingEduFive{%
+    \resumeSubheadingEduThree{%
     \myHref{http://www.ppgee.ufpa.br/index.php/en/}{Universidade Federal do Pará (UFPA) -- PPGEE}}{Belém, PA, BRA}
-      {Mestre -- Computação Aplicada: Inteligência Artificial}
-        {}
+      {Mestre -- Inteligência Artificial}
+        %{}
         %{Aug 2015 -- Mar 2018}
         %{3.889}
-        {9.7222}
+        %{9.7222}deixar para 2 a 3 anos (ou ate 5 no maximo) depois da graduação ou de anos de experiência
     \resumeSubheadingEduThree{%
     \myHref{https://www.cs.ksu.edu/index.html}{Kansas State University (KSU)}}{Manhattan, KS, EUA}
       {período de Mestrado -- Ciência da Computação}
@@ -406,7 +412,7 @@ em rel. ao atraso (%
         %(87+9)/(23+3)=3.692 (combined)
     \resumeSubheadingEduThree{%
     \myHref{https://oi.fel.cvut.cz/en/bachelor-specialization-computer-and-informatic-science}{Czech Technical University (CTU)}}{Praga, CZE}
-      {Bacharel -- Ciência da Computação e TI}
+      {Bacharel -- Ciência da Computação e Informação}
         %{Jun 2014}
         %{Aug 2011 -- June 2014}
         %{3.007}
