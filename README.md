@@ -9,7 +9,7 @@ I created this as managing a resume on Google Docs was hard and changing any for
 
 
 ### English version
-English version is accessible in my other repo at github.com/vrbsky/resume-en
+English version is accessible in my other repo at [github.com/vrbsky/resume-en](https://github.com/vrbsky/resume-en)
 
 
 ### License
