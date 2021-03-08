@@ -51,6 +51,7 @@
 %
 %--- underline with dotted line ---
 \newcommand{\myHref}[2]{\udensdot{\hspace{-1.2pt}\href{#1}{#2}\hspace{-4pt}}\hspace{-1.2pt}}
+\newcommand{\myHrefIcn}[2]{#2 \href{#1}{\scriptsize{\faExternalLink{}}}}
 %
 %--- no underline ---
 %\newcommand{\myHref}[2]{\href{#1}{#2}}
@@ -77,7 +78,7 @@
 
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
+  \vspace{-2pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
 %-------------------------
@@ -100,10 +101,16 @@
     \end{tabular*}\vspace{-5pt}
 }
 \newcommand{\resumeSubheadingEduThree}[3]{
-  \vspace{-2pt}\item
+  \vspace{-2=1pt}\item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \textbf{#1} $\vert$ \textit{\small#3} & #2 \\
     \end{tabular*}\vspace{-16pt}
+}
+\newcommand{\resumeSubheadingEduFourLink}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \myHrefIcn{#2}{\textbf{#1}} \textit{\small#4} & #3 \\
+    \end{tabular*}\vspace{-20pt}
 }
 \newcommand{\resumeSubheadingEduFive}[5]{
   \vspace{-1pt}\item
@@ -146,6 +153,12 @@
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       {\small #1} {\small (#2)} & {[\small \texttt{#5}]} \\
     \end{tabular*}\vspace{-5pt}
+}
+\newcommand{\resumeJobSubheadingD}[7]{
+  \vspace{0pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#4} na \myHrefIcn{#1}{#2} \hspace{3pt} [\small \texttt{#6}] & {\small #5}
+    \end{tabular*}\vspace{-6pt}
 }
 \newcommand{\resumeSubheadingThree}[3]{
   \vspace{-1pt}\item
@@ -201,31 +214,33 @@ Dez\fi~\number\year}
 
 %---------- Define formatted text ----------
 \newcommand{\mytitle}{\textbf{{\huge \foreignlanguage{czech}{Ladislav Vrbsky}}}}
-\newcommand{\intro}{\twoRowCell{%
+\newcommand{\intro}{%\twoRowCell{%
 %Passionate for Artificial Intelligence and Software Engineering. Seeking}{challenging projects, preferably in an English-speaking environment.
-Cuiroso, honesto, multi-cultural, ambicioso, apaixonado por Machine Learning (ML),\\
-Inteliência Artificial (IA), Liderança e Aprendizagem; Mestre em Comp. Aplicada - IA;\\
+Dando tudo para Inteligência Artificial (IA) e Dados desde 2019. Geralmente analisa dados,
+prototipa e transcreve para produção modelos de Machine Learning (ML) e desenvolve uma plataforma
+de dados, tudo na cloud, usando Python e SQL. Interage com stakeholders e devs e treina pessoas.
+É curioso, honesto, multi-cultural, ambicioso, apaixonado por ML, IA, Data, Cloud e Liderança. Mestre em IA.
 %----- Profissional -----
-Foca em melhores práticas para AI/ML/Dados e desenvolvimento da equipe e da empresa.
+%Foca em melhores práticas para AI/ML/Dados e desenvolvimento da equipe e da empresa.
 %----- Professorial -----
 %Pretende ensinar IA, ML, Ciência de Dados, Big Data, Ciência da Computação, etc.
-}}
+}
 \newcommand{\email}{%
-\myHref{mailto:ladislav.vrbsky@gmail.com}{ladislav.vrbsky@gmail.com}}
+\href{mailto:ladislav.vrbsky@gmail.com}{\faEnvelope{}} ladislav.vrbsky@gmail.com}
 \newcommand{\linkedin}{%
-\myHref{https://linkedin.com/in/vrbsky/}{linkedin.com/in/vrbsky}}
+\href{https://linkedin.com/in/vrbsky/}{\faLinkedin{}} linkedin.com/in/vrbsky}
 \newcommand{\githubIO}{%
-\myHref{https://vrbsky.github.io/}{vrbsky.github.io}}
+\href{https://vrbsky.github.io/}{\faGithub{}} vrbsky.github.io}
 \newcommand{\github}{%
-\myHref{https://github.com/vrbsky}{github.com/vrbsky}}
+\href{https://github.com/vrbsky}{\faGithub{}} github.com/vrbsky}
 \newcommand{\kaggle}{%
-\myHref{https://www.kaggle.com/vrbsky}{kaggle.com/vrbsky}}
+\href{https://www.kaggle.com/vrbsky}{\myFaKaggle{}} kaggle.com/vrbsky}
 \newcommand{\vrbskycom}{%
-\myHref{https://www.vrbsky.com}{www.vrbsky.com}}
+\href{https://www.vrbsky.com}{\faGlobe{}} www.vrbsky.com}
 \newcommand{\addressBR}{%
-\myHref{https://www.google.com/maps?q=Belem,+PA,+Brazil}{Belém, PA, Brasil}}
+\href{https://www.google.com/maps?q=Belem,+PA,+Brazil}{\faMapMarker{}} Belem, PA, Brazil}
 \newcommand{\phoneBR}{%
-\myHref{https://api.whatsapp.com/send?phone=5591993887307}{+55~(91)\,99388-7307}}
+\href{https://api.whatsapp.com/send?phone=5591993887307}{\faPhone{} \faWhatsapp{}} +55~(91)\,99388-7307}
 
 
 %---------- DOCUMENT ----------
@@ -233,31 +248,30 @@ Foca em melhores práticas para AI/ML/Dados e desenvolvimento da equipe e da emp
 
 \vspace{-10pt}
 
-\fancyfoot[C]{\vspace{-2pt}\scriptsize{\version{} \textbar{} Mais informações \& English version: \myHref{https://www.vrbsky.com}{vrbsky.com}}}%use footnotesize or scriptsize
+\fancyfoot[C]{\vspace{-1pt}\scriptsize{\version{} \textbar{} Mais informações \& English version: vrbsky.com \tiny{\href{https://www.vrbsky.com}{\faExternalLink{}}}}}%%use footnotesize or scriptsize
 %\rfoot{\textcolor{mygray}{ver. March 2018}}
 
 %----------HEADING-----------------
-\begin{minipage}{0.66\linewidth}
+\begin{minipage}{0.743\linewidth}
     {\centering
         \mytitle{}\par
     }
-    \vspace{6pt}%6pt
+    \vspace{6pt}
     \intro{}
 \end{minipage}
-\begin{minipage}{0.333\linewidth}
+\begin{minipage}{0.25\linewidth}
     {\flushright
+        \vspace{30pt}
         \small{
-        \faPhone{} \faWhatsapp{} \phoneBR{} \\
-        \faEnvelope{} \email{} \\
-        \faLinkedin{} \linkedin{} \\
-        %\myFaKaggle{} \kaggle{} \\
-        \faGithub{} \github{} \\
-        \faGlobe{} \vrbskycom{} \\
-        \faMapMarker{} \addressBR{} \\
+        \phoneBR{}\\
+        \email{}\\
+        \linkedin{}\\
+        %\kaggle{}\\
+        \github{}\\
+        \vrbskycom{}\\
+        \addressBR{}\\
         }
     }
-        %\vspace{9pt}%6pt
-
 \end{minipage}
 
 %\begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
@@ -271,42 +285,64 @@ Foca em melhores práticas para AI/ML/Dados e desenvolvimento da equipe e da emp
 %    \email{} & \linkedin{} & \github{}
 %\end{tabular*}
 
-\vspace{-10pt}
+\vspace{-6pt}
 %\vspace{-14pt}
 
 %-----------EXPERIENCE-----------------
 \section{Experiência}
   \resumeSubHeadingListStart
-    \resumeJobSubheadingC
-      {\myHref{http://www.vibedesenv.com/}{Vibe}}{Tecnologia para negócios}%{Bel\'em, PA, Brazil}
-      {Cientista de Dados}{Jan 2019 -- Presente}
-      {Python, SQL, Pandas, sklearn, Spark, Azure, Hive, Sqoop, Shell}
-     \projectDescriptionC{Tarefas de Dados e Big Data no banco estadual \myHref{http://www.banpara.b.br/}{Banpará}, além dos outros clientes, utilizando Hadoop, cloud e ML}
+    \resumeJobSubheadingD
+      {http://www.vibetecnologia.com/}{Vibe}{Tecnologia para negócios}%{Bel\'em, PA, Brazil}
+      {Cientista de Dados}{Jan 2019 -- Presente $\vert$ BRA}
+      {AWS, Azure, Python, SQL}%Power BI, sklearn, Pandas, Qlik, serverless, data lake
+      {Projetos de dados e analytics usando Azure cloud, Power BI e outros.}
       \resumeItemListStart
-        \resumeItemCustom{Co-criação e educação proativa do time de ciência de dados}
-        \resumeItemCustom{Processamento e análise de dados para tomada de decisão de negócio, evitando gasto significativo desnecessário}
-        \resumeItemCustom{Entrega proativa para o cliente, resultando em reconhecim. da empresa, aumento de faturamento e de projetos}
-        \resumeItemCustom{Liderança a transformação para ser \textit{Data-Driven} por meio de educação de partes interessadas sobre Dados e ML}
-        \resumeItemCustom{Menores projetos PoC, utilizando sklearn e Spark ML para expandir horizontes das partes interessadas}
-        \resumeItemCustom{Criação de pipelines de dados ETL/ELT}
-        \resumeItemCustom{Administração e configuração breve de um cluster de Hadoop (Cloudera)}
+        \resumeItemCustom{Co-criação e estruturação proativa do time Data Analytics, do seu offering e do seu conteúdo}
+        \resumeItemCustom{Reuniões numerosas com stakeholders, entregando, discutindo e fazendo pitch de venda de projetos de dados}
+        \resumeItemCustom{Desenvolvimento e co-responsabilidade pelo projeto de ML Supervisionado com arquitetura de dados na AWS}
+        \resumeItemCustom{Promoção cultura data-driven da empresa, compartilhando o conhecimento, além de ensinar Inglês}
+        \resumeItemCustom{Controle do COVID-19, coletando dados de API's usando Azure Functions e visualisando dados com Power BI}
+        \resumeItemCustom{Entrega de Provas de Conceito, alavancando cloud da AWS e da Azure}
+        \resumeItemCustom{Elevação do gerenciamento da empresa, entregando relatórios de Business Intelligence (BI) em Power BI}
+        \resumeItemCustom{Fomentação de decisões de negócio, analisando dados dos consumidores, que ajudou evitar gastos significativos}
+                %\resumeItemCustom{Processamento e análise de dados para tomada de decisão de negócio, evitando gasto significativo desnecessário}
+        %\resumeItemCustom{Entrega proativa para o cliente, resultando em reconhecim. da empresa, aumento de faturamento e de projetos}
+        %\resumeItemCustom{Liderança a transformação para ser \textit{Data-Driven} por meio de educação de partes interessadas sobre Dados e ML}
+        %\resumeItemCustom{Menores projetos PoC, utilizando sklearn e Spark ML para expandir horizontes das partes interessadas}
+        %\resumeItemCustom{Criação de data lakes e pipelines de dados ETL/ELT}
+        %\resumeItemCustom{Administração e configuração breve de um cluster de Hadoop (Cloudera)}
         %\resumeItemCustom{Educated various teams on the topics of Data and Machine Learning}
-        \resumeItemCustom{Criação de painéis de Business Intelligence (BI) para os analistas de negócio}
-        \resumeItemCustom{Realização de reuniões com áreas de negócio, entregando e discutindo os projetos de dados}
+        %\resumeItemCustom{Criação de modelos e pipelines de Machine Learning integrados com projetos}
+        %\resumeItemCustom{Criação de painéis de Business Intelligence (BI) para clientes internos e externos}
+        %\resumeItemCustom{Realização de reuniões com áreas de negócio, entregando e discutindo os projetos de dados}
       \resumeItemListEnd
-      
-    \resumeJobSubheadingC
-      {\myHref{http://www.vibedesenv.com/}{Vibe}}{Tecnologia para negócios}%{Bel\'em, PA, Brazil}
-      {Analista de Sistemas - Web}{Out 2017 -- Jan 2019}
-      {Java, \csharp, SQL, REST, JS, ASP.NET, SVN}%CI/CD, JSF, JSP, AngularJS,
-      \projectDescriptionC{Aplicativos web de Internet Banking, sistemas de gerenciamento, serviços web para o banco \myHref{http://www.banpara.b.br/}{Banpará}}
+    
+    \resumeJobSubheadingD
+      {http://orbita.srv.br/}{Órbita}{}%{Bel\'em, PA, Brazil}
+      {Engnheiro e Arquiteto de Dados, Cloud}{Apr 2020 -- Present $\vert$ BRA}
+      {GCP, Python, SQL}%Data Studio, serverless, data lake
+      {Data platform creation, automated data integration}
+      \resumeItemListStart
+        \resumeItemCustom{Arquitetação, estruturação e documentação do projeto automatizado de dados na Google Cloud Platform (GCP)}
+        \resumeItemCustom{Coleta de dados públicos na web, criando uma pipeline serverless de ETL}
+        \resumeItemCustom{Gerenciamento de desenvolvedores remotos e especificação de um sub-projeto de uma outra coleta de dados}
+        \resumeItemCustom{Entrega de visões de dados para analistas de negócios, transformando dados com Python e SQL}
+        \resumeItemCustom{Criação de um visualisador flexível de dados tabulares, utilizando Python}
+        \resumeItemCustom{Gerenciamento da conta GCP do produto}
+      \resumeItemListEnd
+    
+    \resumeJobSubheadingD
+      {http://www.vibedesenv.com/}{Vibe}{Tecnologia para negócios}%{Bel\'em, PA, Brazil}
+      {Analista de Sistemas - Web}{Out 2017 -- Jan 2019 $\vert$ BRA}
+      {Java, \csharp, SQL, REST}%CI/CD, JSF, JSP, AngularJS, JS, ASP.NET, SVN
+      {Aplicativos web de Internet Banking, sistemas de gerenciamento, serviços web para o banco \myHref{http://www.banpara.b.br/}{Banpará}}
       \resumeItemListStart
           %{Internet Banking applications and other internal systems for a Brazilian state bank \myHref{http://www.banpara.b.br/}{Banpará}\\
           %for a local state bank \myHref{http://www.banpara.b.br/}{Banpar\'a} --
         %Internet Banking apps and internal management systems}
-        \resumeItemCustom{Desenvolovimento, melhoras e manutenção de vários sistemas novos e legados (predominante back-end)}
+        \resumeItemCustom{Desenvolovimento, correção, melhoras de sistemas e serviços web (predominante back-end)}
         \resumeItemCustom{Aumento de 3x da velocidade de atendimento da sustentação por melhoria de uma ferramenta de automatização}
-        \resumeItemCustom{Exterminação de bugs de alto-impacto em produção}
+        %\resumeItemCustom{Exterminação de bugs de alto-impacto em produção}
         %\resumeItemCustom{Reduziu de horas para minutos soluções de algumas tarefas do time por conhecimento de varios sistemas}
         %\resumeItemCustom{Analyzed system errors, both in code and in databases}
         %\resumeItemCustom{Used (RESTful) web services}
@@ -331,91 +367,103 @@ Foca em melhores práticas para AI/ML/Dados e desenvolvimento da equipe e da emp
 %    \end{tabular*}
 %      \resumeItemListEnd
 
-    \resumeJobSubheadingC
-      {\myHref{http://www.lpo.ufpa.br/}{Laboratório de Pesquisa Operacional}}{Laboratório da faculdade da Engenharia Elétrica}%{Bel\'em, PA, Brazil}
-      {Pesquisador da Inteligência Artificial Aplicada \normalfont{(Bolsista CAPES)}%
+    \resumeJobSubheadingD
+      {http://www.lpo.ufpa.br/}{UFPA}%{Laboratório de Pesquisa Operacional}
+      {Laboratório da faculdade da Engenharia Elétrica}%{Bel\'em, PA, Brazil}
+      {Pesquisador da Inteligência Artificial Aplicada% \normalfont{(Bolsista CAPES)}%
       %\normalfont{, (part-time)}
-      }{Jan 2016 -- Abr 2018}
-      {Matlab, \LaTeX{}, Git}
-      \projectDescriptionC{Otimização de comunicação para Smart Grid por meio de posicionamento das células
+      }{Jan 2016 -- Abr 2018 $\vert$ BRA}
+      {Matlab}%, \LaTeX{}, Git}
+      {Otimização de comunicação para Smart Grid por meio de posicionamento das células
       %(o sistema inteligente de distribuição da energia elétrica)
       - Relacionado com o Mestrado}
       \resumeItemListStart
         %\resumeItem{Research Assistant - Machine Learning}
-%\resumeItemCustom{Developed a model that calculates communication delay in network}
-\resumeItemCustom{Criação de um otimizador de topologia baseado em clusterização para redes
-%para redes de computadores
-em rel. ao atraso (%
-\myHref{https://github.com/vrbsky/network-model}{Open-Sourced})}
-\resumeItemCustom{Comparação de algoritmos e 50\texttt{+} configurações de k-means/modelo - base da \myHref{http://www.repositorio.ufpa.br/jspui/bitstream/2011/10013/1/Dissertacao_ClusteringDrivenEquipament.pdf}{Dissertação}: \textit{Clustering-driven equipment deployment planner and analyzer for wireless non-mobile networks applied to Smart Grid scenarios}}
-%\resumeItemCustom{Open-sourced the model on \myHref{https://github.com/vrbsky/network-model}{GitHub} for utility companies and further research}
+            %\resumeItemCustom{Developed a model that calculates communication delay in network}
+            \resumeItemCustom{Comparação de algoritmos e %50\texttt{+}
+            suas configurações em relação à latência de comunicação $\rightarrow$ \myHrefIcn{http://www.repositorio.ufpa.br/jspui/bitstream/2011/10013/1/Dissertacao_ClusteringDrivenEquipament.pdf}{Dissertação}}
+            \resumeItemCustom{Implementou um otimizador de topologia baseado em clusterização para redes no Smart Grid;
+            %para redes de computadores
+            %em rel. ao atraso (%
+            \myHrefIcn{https://github.com/vrbsky/network-model}{Código Aberto}}
+            %\resumeItemCustom{Comparação de algoritmos e 50\texttt{+} configurações de k-means/modelo - base da \myHref{http://www.repositorio.ufpa.br/jspui/bitstream/2011/10013/1/Dissertacao_ClusteringDrivenEquipament.pdf}{Dissertação}: \textit{Clustering-driven equipment deployment planner and analyzer for wireless non-mobile networks applied to Smart Grid scenarios}}
+            %\resumeItemCustom{Open-sourced the model on \myHref{https://github.com/vrbsky/network-model}{GitHub} for utility companies and further research}
       \resumeItemListEnd
 
-    \resumeJobSubheadingC
-      {\myHref{https://www.agentfly.com}{AgentFly Technologies}}{Startup que nasceu no
+    \resumeJobSubheadingD
+      {https://www.agentfly.com}{AgentFly}% Technologies}
+      {Startup que nasceu no
       \myHref{http://aic.fel.cvut.cz/}{AI Center}}%{Prague, Czech Republic}
-      {Analista de Sistemas Júnior}{Abr 2013 -- Ago 2014}
-      {Java, CVS}
-      \projectDescriptionC{Simulação de gerenciamento de tráfego aéreo para análises hipotéticas e conceitos futuros}
+      {Analista de Sistemas Júnior}{Abr 2013 -- Ago 2014 $\vert$ CZE}
+      {Java}
+      {Simulação de gerenciamento de tráfego aéreo para análises hipotéticas e conceitos futuros}
       \resumeItemListStart
-        \resumeItemCustom{Implementação protocolo de prevenção de colisões para VANTs (drones)}
-        \resumeItemCustom{Otimização da heurística de geração das rotas por meio de extrapolação da métrica baseada em colisões}
-        \resumeItemCustom{Análise de 4 heurísticas de geração das rotas em relação dos custos computacionais e de comunicação e outros}
+        \resumeItemCustom{Implementação protocolo de prevenção de colisões para VANTs (drones) para gerenciamento de tráfego aéreo}
+        %\resumeItemCustom{Otimização da heurística de geração das rotas por meio de extrapolação da métrica baseada em colisões}
+        \resumeItemCustom{Análise e otimização de geração das rotas por meio de extrapolação da métrica baseada em colisões}
         %\resumeItemCustom{Developed communication skills by interacting and working directly with the CEO}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
-\vspace{-15.5pt}
+\vspace{-10pt}
 
 %-----------PROJECTS-----------------
 \section{Projetos \& Publicações}
   \resumeSubHeadingListStart
     \resumeSubItem{%
         \textbf{%
-            \myHref{http://icnsc2017.dimes.unical.it/}{ICNSC 2017} (Conferên. Internac.):
-        {\myHref{https://ieeexplore.ieee.org/document/8000059/}{Clustering techniques for data network planning in Smart Grids}}}}
-        {\\\hspace{24pt}Determina posições de implantação das Estações Base na rede. Compara algoritmos de clustering.}
-    \resumeSubItem{Detecção de Fraudes na rede elétrica}%
+            \myHrefIcn{http://icnsc2017.dimes.unical.it/}{ICNSC 2017} (Conferên. Internac.)}}
+        {\myHrefIcn{https://ieeexplore.ieee.org/document/8000059/}{Clustering techniques for data network planning in Smart Grids}}
+        %{\\\hspace{24pt}Determina posições de implantação das Estações Base na rede. Compara algoritmos de clustering.}
+    \resumeSubItem{Detecção de fraudes na rede elétrica}%
         {Redes Neurais, Árvores de Decisão, Lógica Fuzzy, Algoritmos Genéticos}
-    \resumeSubItem{Algortmo Memético para O Problema do Caixeiro Viajante}{Algoritmo Genético com busca local}
-    \resumeSubItem{Outros de ML}
-        {Transfer learning (TensorFlow), App simples usando TF.js, Quantização das cores (Matlab)}
+    \resumeSubItem{Algortmo memético para o problema do caixeiro viajante}{Algoritmo Genético com busca local}
+    \resumeSubItem{Outros ML}
+        {Transfer learning (TensorFlow), ML no navegador do cliente (TF.js), Quantização das cores (Matlab)}
   \resumeSubHeadingListEnd
 
 %--------COMPUTER SCIENCE SKILLS------------
 \section{Competências}
   \resumeSubHeadingListStart
-    \resumeSubItem{Linguagens}{Python 3 anos, SQL 2 anos, Java 4 anos, \csharp{} e C/\cplusplus{} 1 ano, Matlab 3 anos $\vert$ \textbf{Eng}, \textbf{Por}, \textbf{Cze}, Ger}
+    \resumeSubItem{Linguagens, Bibliotecas, etc.}{Python, SQL, sklearn, pandas, git, Java, \csharp, Matlab $\vert$ Eng, Por, Cze, (Ger)}
       %\hfill
       %\textbf{}{}
-    \resumeSubItem{Competências}{Aprendizado (Não-)Supervisionado, Estatística, Public Speaking, BI Dashboards} %AWS, Play, React, Kafka, GCE, Hadoop
-    \resumeSubItem{Interesses}{Spark, Kafka, TensorFlow 2, PyTorch, Cloud, Aprendizado por Reforço, Redes Neurais $\vert$ Liderança}
+    \resumeSubItem{Competências}{ML, Estatística, dados e arquitetura Cloud (AWS, GCP, Azure), Public speaking, Ensino, BI dev}%AWS, Play, React, Kafka, GCE, Hadoop ecosystem
+    \resumeSubItem{Interesses}{Liderança, TensorFlow, PyTorch, Spark, Kafka, Aprendizado por Reforço}
     
   \resumeSubHeadingListEnd
 
 %-----------EDUCATION-----------------
 \section{Educação}
   \resumeSubHeadingListStart
-    \resumeSubheadingEduThree{%
-    \myHref{http://www.ppgee.ufpa.br/index.php/en/}{Universidade Federal do Pará (UFPA) -- PPGEE}}{Belém, PA, BRA}
-      {Mestre -- Inteligência Artificial}
+    \resumeSubheadingEduFourLink{%
+    Universidade Federal do Pará (UFPA)}
+    {http://www.ppgee.ufpa.br/index.php/en/}
+    {Belém, PA, BRA}
+    {Mestre -- Inteligência Artificial}
         %{}
         %{Aug 2015 -- Mar 2018}
         %{3.889}
         %{9.7222}deixar para 2 a 3 anos (ou ate 5 no maximo) depois da graduação ou de anos de experiência
-    \resumeSubheadingEduThree{%
-    \myHref{https://www.cs.ksu.edu/index.html}{Kansas State University (KSU)}}{Manhattan, KS, EUA}
-      {período de Mestrado -- Ciência da Computação}
+    \resumeSubheadingEduFourLink{%
+    Kansas State University (KSU)}
+    {https://www.cs.ksu.edu/index.html}
+    {Manhattan, KS, EUA}
+    {período de Mestrado -- Ciência da Computação}
         %{Aug 2014 -- May 2015}
         %{3.692~(undergrad.~\&~grad.~combined)}%
         %87/23=3.783~(undergrad.)
         %9/3=3.000~(grad.)
         %(87+9)/(23+3)=3.692 (combined)
-    \resumeSubheadingEduThree{%
-    \myHref{https://oi.fel.cvut.cz/en/bachelor-specialization-computer-and-informatic-science}{Czech Technical University (CTU)}}{Praga, CZE}
-      {Bacharel -- Ciência da Computação e Informação}
+    \resumeSubheadingEduFourLink{%
+    Czech Technical University (CTU)}
+    {https://fel.cvut.cz/en/education/bk/plany/pl10248504.html}
+    {Praga, CZE}
+    {Bacharel -- Ciência da Computação e Informação}
         %{Jun 2014}
         %{Aug 2011 -- June 2014}
         %{3.007}
+    \vspace{0.5pt}
+    \resumeSubItem{\normalsize{Extra}}{Azure ML (Udacity), Ciência de Dados (AWS, Udemy), Engenharia de Dados (Coursera, Qwiklabs)}
   \resumeSubHeadingListEnd
 %-------------------------------------------
 \end{document}
