@@ -160,6 +160,12 @@
       \textbf{#4} na \myHrefIcn{#1}{#2} \hspace{3pt} [\small \texttt{#6}] & {\small #5}
     \end{tabular*}\vspace{-6pt}
 }
+\newcommand{\resumeJobSubheadingDx}[5]{
+  \vspace{0pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#2} #1 \hspace{3pt} [\small \texttt{#4}] & {\small #3}
+    \end{tabular*}\vspace{-6pt}
+}
 \newcommand{\resumeSubheadingThree}[3]{
   \vspace{-1pt}\item
     \begin{tabular*}{0.97\textwidth}{l @{\extracolsep{\fill}}r}
@@ -216,15 +222,16 @@ Dez\fi~\number\year}
 \newcommand{\mytitle}{\textbf{{\huge \foreignlanguage{czech}{Ladislav Vrbsky}}}}
 \newcommand{\intro}{%\twoRowCell{%
 %Passionate for Artificial Intelligence and Software Engineering. Seeking}{challenging projects, preferably in an English-speaking environment.
-Mestre em IA, focado em Inteligência Artificial (IA) e Dados.
-%Produz todo o pipeline
-Executa projetos de Machine Learning (ML), desde as análises e prototipação, até a produção
-%analisa dados, prototipa e transcreve para produção modelos de Machine Learning (ML)
-e desenvolve uma plataforma de dados, tudo na cloud, usando Python e SQL. Interage com stakeholders e desenvolvedores e treina pessoas. É curioso, multi-cultural, fluente em inglês e apaixonado por IA, Data, Cloud e Liderança.
-%----- Profissional -----
-%Foca em melhores práticas para AI/ML/Dados e desenvolvimento da equipe e da empresa.
-%----- Professorial -----
-%Pretende ensinar IA, ML, Ciência de Dados, Big Data, Ciência da Computação, etc.
+% Mestre em IA, focado em Inteligência Artificial (IA) e Dados.
+% %Produz todo o pipeline
+% Executa projetos de Machine Learning (ML), desde as análises e prototipação, até a produção
+% %analisa dados, prototipa e transcreve para produção modelos de Machine Learning (ML)
+% e desenvolve uma plataforma de dados, tudo na cloud, usando Python e SQL. Interage com stakeholders e desenvolvedores e treina pessoas. É curioso, multi-cultural, fluente em inglês e apaixonado por IA, Data, Cloud e Liderança.
+% %----- Profissional -----
+% %Foca em melhores práticas para AI/ML/Dados e desenvolvimento da equipe e da empresa.
+% %----- Professorial -----
+% %Pretende ensinar IA, ML, Ciência de Dados, Big Data, Ciência da Computação, etc.
+Líder do time de dados, entregando projetos de dados e de IA na nuvem (geralmente AWS), usando Python, SQL e abordagem DevOps. Participa em todas as partes do ciclo de vida do projeto, incluindo o seu gerenciamento. Estrutura e treina o time de dados. Sempre aprendendo, é multi-cultural, fluente em inglês e apaixonado por IA, Data, Cloud, Liderança, esportes e sua filha.
 }
 \newcommand{\email}{%
 \href{mailto:ladislav.vrbsky@gmail.com}{\scriptsize{\faEnvelope{}}} ladislav.vrbsky@gmail.com}
@@ -237,9 +244,9 @@ e desenvolve uma plataforma de dados, tudo na cloud, usando Python e SQL. Intera
 \newcommand{\kaggle}{%
 \href{https://www.kaggle.com/vrbsky}{\myFaKaggle{}} kaggle.com/vrbsky}
 \newcommand{\vrbskycom}{%
-\href{https://www.vrbsky.com}{\faGlobe{}} www.vrbsky.com}
+\href{https://www.vrbsky.github.com}{\faGlobe{}} www.vrbsky.github.com}
 \newcommand{\addressBR}{%
-\hspace{1pt}\href{https://www.google.com/maps?q=Belem,+PA,+Brazil}{\faMapMarker{}}\hspace{1pt} Remoto (GMT-3), Brasil}
+\hspace{1pt}\href{https://www.google.com/maps?q=Belem,+PA,+Brazil}{\faMapMarker{}}\hspace{1pt} Remoto (UTC-3), Brasil}
 \newcommand{\phoneBR}{%
 \href{https://api.whatsapp.com/send?phone=5591993887307}{\faWhatsapp{}} +55~(91)\,99388-7307}%\faPhone{} 
 
@@ -249,7 +256,7 @@ e desenvolve uma plataforma de dados, tudo na cloud, usando Python e SQL. Intera
 
 \vspace{-10pt}
 
-\fancyfoot[C]{\vspace{-1pt}\scriptsize{\version{} \textbar{} Mais informações \& English version: vrbsky.com \tiny{\href{https://www.vrbsky.com}{\faExternalLink{}}}}}%%use footnotesize or scriptsize
+\fancyfoot[C]{\vspace{-1pt}\scriptsize{\version{} \textbar{} Mais informações \& English version: vrbsky.github.com \tiny{\href{https://www.vrbsky.github.com}{\faExternalLink{}}}}}%%use footnotesize or scriptsize
 %\rfoot{\textcolor{mygray}{ver. March 2018}}
 
 %----------HEADING-----------------
@@ -295,18 +302,19 @@ e desenvolve uma plataforma de dados, tudo na cloud, usando Python e SQL. Intera
   \resumeSubHeadingListStart
     \resumeJobSubheadingD
       {http://www.vibetecnologia.com/}{Vibe}{Tecnologia para negócios}%{Bel\'em, PA, Brazil}
-      {Cientista de Dados}{Jan 2019 -- Presente $\vert$ BRA}
-      {AWS, Azure, Python, SQL}%Power BI, sklearn, Pandas, Qlik, serverless, data lake
+      {Engenheiro e Cientista de Dados}{Jan 2019 -- Presente $\vert$ Remoto}
+      {AWS, Python, SQL, DevOps}%Power BI, sklearn, Pandas, Qlik, serverless, data lake
       {Projetos de dados e analytics usando Azure cloud, Power BI e outros.}
       \resumeItemListStart
-        \resumeItemCustom{Desenvolvimento e responsabilidade pelo projeto de ML Supervisionado com arquitetura de dados e MLOps na AWS, desde prototipação até a produção}
-        \resumeItemCustom{Co-criação e estruturação proativa do time Data Analytics, do seu offering e do seu conteúdo}
+        \resumeItemCustom{Estruturação da base para data analytics, criando Data Lakes e Data Warehouses na AWS}
+        \resumeItemCustom{Redução de tempo de treinamento de deep learning (IA) de semanas para dias}
+        \resumeItemCustom{Co-criação proativa, estruturação e liderança do time Data}
         %\resumeItemCustom{Reuniões numerosas com stakeholders, entregando, discutindo e fazendo pitch de venda de projetos de dados}
-        \resumeItemCustom{Promoção cultura data-driven da empresa, compartilhando o conhecimento, além de ensinar Inglês}
-        \resumeItemCustom{Controle do COVID-19, coletando dados de API's usando Azure Functions e visualisando dados com Power BI}
-        \resumeItemCustom{Entrega de Provas de Conceito, alavancando cloud da AWS e da Azure}
-        \resumeItemCustom{Elevação do gerenciamento da empresa, entregando relatórios de Business Intelligence (BI) em Power BI}
-        \resumeItemCustom{Fomentação de decisões de negócio, analisando dados dos consumidores, que ajudou evitar gastos significativos}
+        \resumeItemCustom{Promoção cultura data-driven da empresa, compartilhando o conhecimento, além de ensinar inglês}
+        % \resumeItemCustom{Controle do COVID-19, coletando dados de API's usando Azure Functions e visualisando dados com Power BI}
+        % \resumeItemCustom{Entrega de Provas de Conceito, alavancando cloud da AWS e da Azure}
+        \resumeItemCustom{Melhoria de gerenciamento, entregando relatórios e dashboards de Business Intelligence (BI)}
+        \resumeItemCustom{Fomentação de decisões de negócio com análise de dados, que ajudou evitar gastos significativos}
                 %\resumeItemCustom{Processamento e análise de dados para tomada de decisão de negócio, evitando gasto significativo desnecessário}
         %\resumeItemCustom{Entrega proativa para o cliente, resultando em reconhecim. da empresa, aumento de faturamento e de projetos}
         %\resumeItemCustom{Liderança a transformação para ser \textit{Data-Driven} por meio de educação de partes interessadas sobre Dados e ML}
@@ -319,9 +327,9 @@ e desenvolve uma plataforma de dados, tudo na cloud, usando Python e SQL. Intera
         %\resumeItemCustom{Realização de reuniões com áreas de negócio, entregando e discutindo os projetos de dados}
       \resumeItemListEnd
     
-    \resumeJobSubheadingD
-      {http://orbita.srv.br/}{Órbita}{}%{Bel\'em, PA, Brazil}
-      {Engnheiro e Arquiteto de Dados, Cloud}{Apr 2020 -- Present $\vert$ BRA}
+    \resumeJobSubheadingDx
+      {(contratual)}%{Bel\'em, PA, Brazil}
+      {Engnheiro e Arquiteto de Dados}{Apr 2020 -- Feb 2022 $\vert$ Remoto}
       {GCP, Python, SQL}%Data Studio, serverless, data lake
       {Data platform creation, automated data integration}
       \resumeItemListStart
@@ -384,7 +392,7 @@ e desenvolve uma plataforma de dados, tudo na cloud, usando Python e SQL. Intera
             %\resumeItemCustom{Developed a model that calculates communication delay in network}
             \resumeItemCustom{Comparação de algoritmos e %50\texttt{+}
             suas configurações em relação à latência de comunicação $\rightarrow$ \myHrefIcn{http://www.repositorio.ufpa.br/jspui/bitstream/2011/10013/1/Dissertacao_ClusteringDrivenEquipament.pdf}{Dissertação}}
-            \resumeItemCustom{Implementou um otimizador de topologia baseado em clusterização para redes no Smart Grid;
+            \resumeItemCustom{Implementação de um otimizador baseado em clusterização para redes no Smart Grid;
             %para redes de computadores
             %em rel. ao atraso (%
             \myHrefIcn{https://github.com/vrbsky/network-model}{Código Aberto}}
@@ -409,7 +417,7 @@ e desenvolve uma plataforma de dados, tudo na cloud, usando Python e SQL. Intera
 \vspace{-10pt}
 
 %-----------PROJECTS-----------------
-\section{Projetos \& Publicações}
+\section{Outros Projetos \& Publicações}
   \resumeSubHeadingListStart
     \resumeSubItem{%
         \textbf{%
@@ -423,16 +431,20 @@ e desenvolve uma plataforma de dados, tudo na cloud, usando Python e SQL. Intera
         {Transfer learning (TensorFlow), ML no navegador do cliente (TF.js), Quantização das cores (Matlab)}
   \resumeSubHeadingListEnd
 
+\vspace{-4pt}
+
 %--------COMPUTER SCIENCE SKILLS------------
 \section{Competências}
   \resumeSubHeadingListStart
-    \resumeSubItem{Linguagens, Bibliotecas, etc.}{Python, SQL, sklearn, pandas, git, Java, \csharp, Matlab $\vert$ Eng, Por, Cze, (Ger)}
+    \resumeSubItem{Linguagens, Bibliotecas, etc.}{Python, SQL, shell, sklearn, pandas, git, Java, \csharp, Matlab $\vert$ Eng, Por, Cze, (Ger)}
       %\hfill
       %\textbf{}{}
-    \resumeSubItem{Competências}{ML, Estatística, dados e arquitetura Cloud (AWS, GCP, Azure), Public speaking, Ensino, BI dev}%AWS, Play, React, Kafka, GCE, Hadoop ecosystem
-    \resumeSubItem{Interesses}{Liderança, TensorFlow, PyTorch, Spark, Kafka, Aprendizado por Reforço}
+    \resumeSubItem{Competências}{AWS, IA/ML, Engenharia de dados, arquitetura de solução, comunicação, liderança (em progresso)}%AWS, Play, React, Kafka, GCE, Hadoop ecosystem
+    % \resumeSubItem{Interesses}{Liderança, TensorFlow, PyTorch, Spark, Kafka, Aprendizado por Reforço}
     
   \resumeSubHeadingListEnd
+
+\vspace{-4pt}
 
 %-----------EDUCATION-----------------
 \section{Educação}
